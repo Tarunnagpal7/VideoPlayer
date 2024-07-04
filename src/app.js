@@ -14,5 +14,10 @@ app.use(express.urlencoded({extended:true,limit:"16kb"})); // same for url , () 
 app.use(express.static("public")); //saving pdf , img in public folder in my server
 app.use(cookieParser()) //cookies use for crud operations by server  (secure cookies)
 
+//import routes
+import userRouter from "./routes/user.routes.js"
+//routes declaration
+app.use("/api/v1/users",userRouter)
+// http://localhost:8000/api/v1/user/register
 
 export {app};
